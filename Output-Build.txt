@@ -1,0 +1,5 @@
+﻿1>------ Build started: Project: TigerCompiler, Configuration: Debug Any CPU ------
+1>C:\Users\leandro\Desktop\ANTLR Software\TigerCompiler\TigerCompiler\Parsing\TigerLexer.cs(33,2,33,21): warning CS3021: 'TigerCompiler.Parsing.TigerLexer' does not need a CLSCompliant attribute because the assembly does not have a CLSCompliant attribute
+1>C:\Users\leandro\Desktop\ANTLR Software\TigerCompiler\TigerCompiler\Parsing\TigerParser.cs(38,2,38,21): warning CS3021: 'TigerCompiler.Parsing.TigerParser' does not need a CLSCompliant attribute because the assembly does not have a CLSCompliant attribute
+1>  TigerCompiler -> C:\Users\leandro\Desktop\ANTLR Software\TigerCompiler\TigerCompiler\bin\Debug\TigerCompiler.exe
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========

@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{89440EF2-1B49-4FBA-82BD-7D47FB237F20}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TigerCompiler</RootNamespace>
+    <AssemblyName>TigerCompiler</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\..\ANTLRTests\ANTLRTests\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AST\AccessNode.cs" />
+    <Compile Include="AST\Adaptor.cs" />
+    <Compile Include="AST\AndNode.cs" />
+    <Compile Include="AST\ArithmeticNode.cs" />
+    <Compile Include="AST\ArrayNode.cs" />
+    <Compile Include="AST\AssignNode.cs" />
+    <Compile Include="AST\AtomicNode.cs" />
+    <Compile Include="AST\BinaryNode.cs" />
+    <Compile Include="AST\BreakNode.cs" />
+    <Compile Include="AST\BuiltinType.cs" />
+    <Compile Include="AST\DivNode.cs" />
+    <Compile Include="AST\EqNode.cs" />
+    <Compile Include="AST\ExpressionNode.cs" />
+    <Compile Include="AST\ExpressionsBlockNode.cs" />
+    <Compile Include="AST\FieldValueNode.cs" />
+    <Compile Include="AST\ForNode.cs" />
+    <Compile Include="AST\FunctionDeclarationNode.cs" />
+    <Compile Include="AST\FunctionsBlockNode.cs" />
+    <Compile Include="AST\IBreakableNode.cs" />
+    <Compile Include="AST\IfThenElseNode.cs" />
+    <Compile Include="AST\IfThenNode.cs" />
+    <Compile Include="AST\LetInEndNode.cs" />
+    <Compile Include="AST\LSBNode.cs" />
+    <Compile Include="AST\NilNode.cs" />
+    <Compile Include="AST\AliasTypeNode.cs" />
+    <Compile Include="AST\ArrayTypeNode.cs" />
+    <Compile Include="AST\PredefinedTypes.cs" />
+    <Compile Include="AST\ParametersNode.cs" />
+    <Compile Include="AST\PeriodNode.cs" />
+    <Compile Include="AST\RecordNode.cs" />
+    <Compile Include="AST\TypeDeclarationNode.cs" />
+    <Compile Include="AST\FieldTypeNode.cs" />
+    <Compile Include="AST\GEThanNode.cs" />
+    <Compile Include="AST\GThanNode.cs" />
+    <Compile Include="AST\IdentityNode.cs" />
+    <Compile Include="AST\IdNode.cs" />
+    <Compile Include="AST\IntNode.cs" />
+    <Compile Include="AST\LEThanNode.cs" />
+    <Compile Include="AST\LogicNode.cs" />
+    <Compile Include="AST\LThanNode.cs" />
+    <Compile Include="AST\MinusNode.cs" />
+    <Compile Include="AST\NegativeNode.cs" />
+    <Compile Include="AST\NotEqNode.cs" />
+    <Compile Include="AST\OrderNode.cs" />
+    <Compile Include="AST\OrNode.cs" />
+    <Compile Include="AST\PlusNode.cs" />
+    <Compile Include="AST\ProgramNode.cs" />
+    <Compile Include="AST\RecordTypeNode.cs" />
+    <Compile Include="AST\RelationalNode.cs" />
+    <Compile Include="CodeGeneration\StandardFunctions.cs" />
+    <Compile Include="CodeGeneration\TypeHelpers.cs" />
+    <Compile Include="Semantics\FunctionInfo.cs" />
+    <Compile Include="Semantics\Scope.cs" />
+    <Compile Include="AST\StarNode.cs" />
+    <Compile Include="AST\StringNode.cs" />
+    <Compile Include="AST\TigerNode.cs" />
+    <Compile Include="AST\TypeNode.cs" />
+    <Compile Include="AST\UnaryNode.cs" />
+    <Compile Include="AST\UtilNode.cs" />
+    <Compile Include="AST\VariableDeclarationNode.cs" />
+    <Compile Include="AST\BlockDeclarationsNode.cs" />
+    <Compile Include="AST\DeclarationNode.cs" />
+    <Compile Include="AST\VariablesBlockNode.cs" />
+    <Compile Include="AST\CallNode.cs" />
+    <Compile Include="AST\WhileNode.cs" />
+    <Compile Include="DrawAST.cs" />
+    <Compile Include="ErrorCode.cs" />
+    <Compile Include="Parsing\ParsingException.cs" />
+    <Compile Include="Parsing\TigerLexer.cs" />
+    <Compile Include="Parsing\TigerParser.cs" />
+    <Compile Include="Parsing\Tokens.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Semantics\SemanticError.cs" />
+    <Compile Include="AST\TypesBlockNode.cs" />
+    <Compile Include="Semantics\TigerInfo.cs" />
+    <Compile Include="Semantics\TypeInfo.cs" />
+    <Compile Include="Semantics\VariableInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <AntlrTokens Include="Parsing\Tiger.tokens">
+      <Generator>MSBuild:Compile</Generator>
+      <CustomToolNamespace>TigerCompiler.Parsing</CustomToolNamespace>
+    </AntlrTokens>
+    <Antlr3 Include="Parsing\Tiger.g">
+      <Generator>MSBuild:Compile</Generator>
+      <CustomToolNamespace>TigerCompiler.Parsing</CustomToolNamespace>
+    </Antlr3>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
